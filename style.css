@@ -4,18 +4,26 @@ body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-.layout {
+#page {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-areas:
+  "sidebar header"
+  "sidebar main";
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 5fr;
   height: 100vh;
 }
 
-aside {
+#page > aside {
+  grid-area: sidebar;
   background-color: lightblue;
-  grid-row: 1 / span 4;
 }
 
-main {
-    background-color: lightgray;
-    grid-row: 2 / span 3;
+#page > header {
+  grid-area: header
+}
+
+#page > main {
+  grid-area: main;
+  background-color: lightgray;
 }
