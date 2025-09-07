@@ -7,23 +7,65 @@ body {
 #page {
   display: grid;
   grid-template-areas:
-  "sidebar header"
-  "sidebar main";
+    'sidebar header'
+    'sidebar main';
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr 5fr;
-  height: 100vh;
+}
+
+#page > * {
+  padding: 2rem;
+  display: grid;
 }
 
 #page > aside {
   grid-area: sidebar;
-  background-color: lightblue;
+  background-color: royalblue;
+  color: white;
+  font-weight: bold;
+  row-gap: 2rem;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+#logo svg {
+  width: 3rem;
+}
+
+aside ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  row-gap: 1rem;
+}
+
+aside a {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+aside li a:hover {
+  text-decoration: underline;
 }
 
 #page > header {
-  grid-area: header
+  grid-area: header;
 }
 
 #page > main {
   grid-area: main;
   background-color: lightgray;
+}
+
+svg {
+  fill: white;
+  width: 1rem;
+  margin-right: 1rem;
 }
