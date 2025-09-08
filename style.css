@@ -9,7 +9,7 @@ body {
   grid-template-areas:
     'sidebar header'
     'sidebar main';
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 5fr;
 }
 
@@ -26,14 +26,16 @@ body {
   row-gap: 2rem;
 }
 
-#logo {
-  display: flex;
-  align-items: center;
+.logo {
+  margin: 0;
+  display: grid;
   font-size: 2rem;
+  grid-template-columns: 4rem auto;
+  align-items: center;
 }
 
-#logo svg {
-  width: 3rem;
+.logo i {
+  font-size: 3rem;
 }
 
 aside ul {
@@ -41,18 +43,18 @@ aside ul {
   padding-left: 0;
   display: grid;
   row-gap: 1rem;
+  font-size: 1rem;
 }
 
 aside a {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
+  display: grid;
+  grid-template-columns: 2rem auto;
   color: white;
   text-decoration: none;
 }
 
 aside li a:hover {
-  text-decoration: underline;
+  color: #e1b941;
 }
 
 #page > header {
@@ -62,10 +64,4 @@ aside li a:hover {
 #page > main {
   grid-area: main;
   background-color: lightgray;
-}
-
-svg {
-  fill: white;
-  width: 1rem;
-  margin-right: 1rem;
 }
