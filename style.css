@@ -11,6 +11,7 @@ body {
     'sidebar main';
   grid-template-columns: 1fr 5fr;
   grid-template-rows: auto 1fr;
+  height: 100vh;
 }
 
 #page > * {
@@ -29,11 +30,9 @@ body {
 }
 
 #logo {
-  margin: 0;
-  display: grid;
   font-size: 2rem;
+  display: grid;
   grid-template-columns: 3rem auto;
-  align-items: center;
 }
 
 aside ul {
@@ -89,12 +88,82 @@ button:hover {
   background-color: lightgray;
 }
 
-#page > main {
-  grid-area: main;
-  background-color: lightgray;
-}
-
 .avatar {
   border-radius: 50%;
   width: 2.5rem;
+}
+
+#page > main {
+  grid-area: main;
+  background-color: lightgray;
+  grid-template-areas:
+  'projects announcements'
+  'projects trending';
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.card {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 1rem;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0,0,0,0.2);
+}
+
+.card-text {
+  color: dimgray;
+}
+
+.card-buttons {
+  text-align: right;
+}
+
+.card h4 {
+  margin: 0;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card hr {
+  width: 100%;
+  height: 0.1rem;
+}
+
+main > div {
+  display: grid;
+  gap: 2rem;
+}
+
+main > #projects {
+  grid-area: projects;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr 1fr;
+}
+
+main h3 {
+  margin-bottom: 0;
+}
+
+#projects h3 {
+  grid-column-start: span 2;
+}
+
+#projects .card {
+  border-left: 0.5rem solid orange;
+}
+
+main > #announcements {
+  grid-area: announcements;
+  grid-template-rows: auto 1fr;
+}
+
+main > #trending {
+  grid-area: trending;
+  grid-template-rows: auto 1fr;
 }
